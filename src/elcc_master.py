@@ -16,7 +16,7 @@ generator = dict()
 ########## Generic ##########
 
 simulation["year"] = 2018
-simulation["region"] = ["PACE"] # identify the nerc region or balancing authority (e.g. "PACE", "WECC", etc.)
+simulation["region"] = ["nyiso"] # identify the nerc region or balancing authority (e.g. "PACE", "WECC", etc.)
 simulation["iterations"] = 10000 # number of iterations for monte carlo simulation
 simulation["target reliability"] = 2.4 # loss-of-load-hours per year (2.4 is standard)
 simulation["shift load"] = 0 # +/- hours
