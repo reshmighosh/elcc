@@ -15,7 +15,7 @@ generator = dict()
 
 ########## Generic ##########
 
-simulation["year"] = 2018
+simulation["year"] = 2013
 simulation["region"] = ["nyiso"] # identify the nerc region or balancing authority (e.g. "PACE", "WECC", etc.)
 simulation["iterations"] = 10000 # number of iterations for monte carlo simulation
 simulation["target reliability"] = 2.4 # loss-of-load-hours per year (2.4 is standard)
@@ -131,7 +131,7 @@ files["eia folder"] = "../eia860"+str(simulation["year"])+"/"
 
 # time savers
 
-if simulation["region"] == ["WECC"]:
+if simulation["region"] == ["nyiso"]: #changed from WECC
     system['enable total interchange'] = False
     system['oldest year'] = 1975
 
