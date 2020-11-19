@@ -21,7 +21,7 @@ DEBUG = False
 OUTPUT_DIRECTORY = ""
 
 
-def get_powGen(solar_cf_file, wind_cf_file):
+def get_powGen(solar_cf_file, wind_cf_file): #importing files from the powGen script. Takes only two arguments solar_cf_file, and wind_cf_file produced through powgen
     
     """ Retrieves all necessary information from powGen netCDF files: RE capacity factors and corresponding lat/lons
     
@@ -37,11 +37,11 @@ def get_powGen(solar_cf_file, wind_cf_file):
     """
 
     # Error Handling
-    if not (path.exists(solar_cf_file) and path.exists(wind_cf_file)):
+    if not (path.exists(solar_cf_file) and path.exists(wind_cf_file)): #handle exceptions if the file you are trying to read doesn't exist.
         error_message = 'Renewable Generation files not available:\n\t'+solar_cf_file+'\n\t'+wind_cf_file
         raise RuntimeError(error_message)
     
-    solarPowGen = Dataset(solar_cf_file)
+    solarPowGen = Dataset(solar_cf_file) #read the powgen files as netcdf data
     windPowGen = Dataset(wind_cf_file) #assume solar and wind cover same geographic region
 
     powGen_lats = np.array(solarPowGen.variables['lat'][:])
